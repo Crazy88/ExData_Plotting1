@@ -27,7 +27,7 @@ plot(hhpower2$datetime
 
 plot(hhpower2$datetime
      ,hhpower2$Voltage
-     ,xlab=""
+     ,xlab="datetime"
      ,ylab="Voltage"
      ,type="l"
 )
@@ -41,16 +41,27 @@ plot(hhpower2$datetime
 )
 lines(hhpower2$datetime,hhpower2$Sub_metering_2,type="l",col="red")
 lines(hhpower2$datetime,hhpower2$Sub_metering_3,type="l",col="blue")
-legend("topright",c("Sub_metering_1","Sub_metering_2","Sub_metering_3")
-       ,pch=21,cex=0.8,lty=1,lwd=2,col=c("black", "red", "blue"))
+legend("topright"
+        ,c("Sub_metering_1"
+        ,"Sub_metering_2"
+        ,"Sub_metering_3")
+        ,cex=0.7
+        #,lty=2
+        ,lwd=2
+        ,col=c("black", "red", "blue")
+        ,bty="n"
+
+)
 
 plot(hhpower2$datetime
      ,hhpower2$Global_reactive_power
-     ,xlab=""
+     ,xlab="datetime"
      ,ylab="Global_reactive_power"
      ,type="l"
 )
 
 dev.copy(png,file="plot4.png",width=480,height=480)
 dev.off()
+
+?legend
 
